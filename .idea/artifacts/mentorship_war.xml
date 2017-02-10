@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="war" name="mentorship:war">
+    <output-path>$PROJECT_DIR$/target</output-path>
+    <root id="archive" name="mentorship-1.0-SNAPSHOT.war">
+      <element id="artifact" artifact-name="mentorship:war exploded" />
+    </root>
+  </artifact>
+</component>
