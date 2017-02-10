@@ -14,6 +14,11 @@
     <description>PowerMoc core functionaly.</description>
     <url>https://github.com/OlegLion/mentorship</url>
 
+    <properties>
+        <project.build.sourseEncoding>UTF-8</project.build.sourseEncoding>
+        <jdk>1.8</jdk>
+    </properties>
+
     <dependencies>
         <dependency>
             <groupId>junit</groupId>
@@ -21,22 +26,40 @@
             <version>4.4</version>
             <scope>test</scope>
         </dependency>
+
         <dependency>
             <groupId>javax.servlet</groupId>
             <artifactId>jstl</artifactId>
             <version>1.1.2</version>
         </dependency>
+
+        <dependency>
+            <groupId>javax.servlet</groupId>
+            <artifactId>servlet-api</artifactId>
+            <version>2.4</version>
+            <scope>provided</scope>
+        </dependency>
+        <dependency>
+            <groupId>javax.servlet</groupId>
+            <artifactId>jsp-api</artifactId>
+            <version>2. 0</version>
+        </dependency>
     </dependencies>
+
     <build>
-    <plugins>
+         <plugins>
         <plugin>
             <groupId>org.apache.maven.plugins</groupId>
-            <artifactId>maven-jar-plugin</artifactId>
-            <version>2.6</version>
-            <extensions>false</extensions>
-            <inherited>true</inherited>
+            <artifactId>maven-compiler-plugin</artifactId>
+            <version>2.3.2</version>
             <configuration>
-                <classifier>test</classifier>
+                <source>$(jdk)</source>
+                <targer>$(jdk)</targer>
+                <compilerVersion>$(jdk)</compilerVersion>
+                <optimize>true</optimize>
+                <werbose></werbose>
+                <debug>true</debug>
+                <fork>true</fork>
             </configuration>
             <dependencies>
 
