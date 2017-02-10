@@ -62,7 +62,6 @@
                 <fork>true</fork>
             </configuration>
             <dependencies>
-
             </dependencies>
         </plugin>
     </plugins>
