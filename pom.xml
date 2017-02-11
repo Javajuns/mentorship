@@ -8,7 +8,6 @@
     <artifactId>mentorship</artifactId>
     <version>1.0-SNAPSHOT</version>
     <packaging>war</packaging>
-
     <name>Learning Maven GitHUB JSP Spring IOC</name>
     <description>PowerMoc core functionaly.</description>
     <url>https://github.com/OlegLion/mentorship</url>
@@ -38,29 +37,35 @@
             <version>2.4</version>
             <scope>provided</scope>
         </dependency>
-        <dependency>
-            <groupId>javax.servlet</groupId>
-            <artifactId>jsp-api</artifactId>
-            <version>2.0</version>
-        </dependency>
     </dependencies>
 
     <build>
-         <plugins>
-         <plugin>
-            <groupId>org.apache.maven.plugins</groupId>
-            <artifactId>maven-compiler-plugin</artifactId>
-            <version>2.3.2</version>
-            <configuration>
-
-                <source>$(jdk)</source>
-                <target>$(jdk)</target>
-                <compilerVersion>$(jdk)</compilerVersion>
-                <optimize>true</optimize>
-                <verbose>true</verbose>
-                <debug>true</debug>
-                <fork>true</fork>
-            </configuration>
+        <directory>target</directory>
+        <outputDirectory>target/classes</outputDirectory>
+        <finalName>${project.artifactId}-${project.version}</finalName>
+        <testOutputDirectory>target/test-classes</testOutputDirectory>
+        <sourceDirectory>src</sourceDirectory>
+        <scriptSourceDirectory>src</scriptSourceDirectory>
+        <testSourceDirectory>src</testSourceDirectory>
+        <testResources>
+            <testResource>
+                <directory>test</directory>
+            </testResource>
+        </testResources>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>2.3.2</version>
+                <configuration>
+                    <source>$(jdk)</source>
+                    <target>$(jdk)</target>
+                    <compilerVersion>$(jdk)</compilerVersion>
+                    <optimize>true</optimize>
+                    <verbose>true</verbose>
+                    <debug>true</debug>
+                    <fork>true</fork>
+                </configuration>
             </plugin>
         </plugins>
     </build>

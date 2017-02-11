@@ -10,7 +10,7 @@
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
-      <module name="mentorship" target="1.5" />
+      <module name="mentorship" target="$(jdk)" />
     </bytecodeTargetLevel>
   </component>
 </project>
