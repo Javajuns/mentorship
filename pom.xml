@@ -44,9 +44,9 @@
         <outputDirectory>target/classes</outputDirectory>
         <finalName>${project.artifactId}-${project.version}</finalName>
         <testOutputDirectory>target/test-classes</testOutputDirectory>
-        <sourceDirectory>src</sourceDirectory>
-        <scriptSourceDirectory>src</scriptSourceDirectory>
-        <testSourceDirectory>src</testSourceDirectory>
+        <sourceDirectory>../src</sourceDirectory>
+        <scriptSourceDirectory>../src</scriptSourceDirectory>
+        <testSourceDirectory>../src</testSourceDirectory>
         <testResources>
             <testResource>
                 <directory>test</directory>
@@ -66,6 +66,11 @@
                     <debug>true</debug>
                     <fork>true</fork>
                 </configuration>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.tomcat.maven</groupId>
+                <artifactId>tomcat7-maven-plugin</artifactId>
+                <version>2.2</version>
             </plugin>
         </plugins>
     </build>
