@@ -7,7 +7,7 @@
         session.setAttribute("token", Long.valueOf(value).toString());
     %>
     What's your name? <input type="text" name="token" value="<%= Long.valueOf(value).toString()%>" size="20">
-    <P> <INPUT type="submit">
+    <P> <INPUT type="submit" value="Submit">
 </form>
 </body>
 </html>
