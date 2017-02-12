@@ -4,6 +4,7 @@
     <%
         java.util.Date date = new java.util.Date();
         long value = date.getTime();
+        String token = "token";
         session.setAttribute("token", Long.valueOf(value).toString());
     %>
     What's your name? <input type="text" name="token" value="<%= Long.valueOf(value).toString()%>" size="20">
