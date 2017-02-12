@@ -5,7 +5,6 @@ public class UserData {
     String username;
     String email;
     int age;
-
     public int getAge() {
         return age;
     }
