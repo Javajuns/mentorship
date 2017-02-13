@@ -6,6 +6,5 @@ public class Main {
     private int age;
     public static void main(String[] args) {
        //Main class
-        System.out.println("Hello!");
     }
 }

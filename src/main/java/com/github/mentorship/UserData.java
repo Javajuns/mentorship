@@ -1,3 +1,5 @@
+package com.github.mentorship;
+
 /**
  * Created by admin on 05.02.2017.
  */
