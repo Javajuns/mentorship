@@ -5,6 +5,6 @@
     <title>Title</title>
 </head>
 <body>
-    <img src="http://localhost:8080/mentorship/SaveNema.jsp?username="durak"/>
+    <img src="http://localhost:8080/mentorship/SaveName.jsp?username=durak"/>
 </body>
 </html>
