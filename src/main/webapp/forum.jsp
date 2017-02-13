@@ -1,10 +1,4 @@
-<%@ page import="com.github.mentorship.DB" %><%--
-  Created by IntelliJ IDEA.
-  User: admin
-  Date: 13.02.2017
-  Time: 2:44
-  To change this template use File | Settings | File Templates.
---%>
+<%@ page import="com.github.mentorship.DB" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
@@ -12,12 +6,19 @@
 </head>
 <body>
 <%
-    DB.comments.add("Cool");
-    DB.comments.add("Not cool");
-
-
-
+    if (request.getMethod().equals("POST")) {
+        String comment = request.getParameter("comment");
+        DB.comments.add(comment);
+    }
+    for (String comment: DB.comments) {
+    out.println(comment + "<br/>");
+    }
 %>
+
+<form method="post" action="forum.jsp">
+    <textarea name="comment"></textarea><br/>
+    <input type="submit" value="Post a comment">
+</form>
 
 </body>
 </html>

@@ -8,4 +8,9 @@ import java.util.List;
  */
 public class DB {
     public static final List<String> comments = new ArrayList<String>();
+
+    static {
+        DB.comments.add("Cool");
+        DB.comments.add("Not cool");
+    }
 }
