@@ -1,7 +1,7 @@
 <%@ page import="java.util.Random" %>
 <html>
 <body>
-<form method="get" action="SaveName.jsp">
+<form method="POST" action="SaveName.jsp">
     What's your name? <input type="text" name="username" size="20" /><br />
     <%
         // java.util.Date date = new java.util.Date();
