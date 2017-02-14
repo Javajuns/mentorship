@@ -1,4 +1,4 @@
-package com.github.mentorship;
+package com.github.Javajuns.mentorship;
 
 import java.util.ArrayList;
 import java.util.List;

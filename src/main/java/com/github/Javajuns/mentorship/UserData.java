@@ -1,4 +1,4 @@
-package com.github.mentorship;
+package com.github.Javajuns.mentorship;
 
 /**
  * Created by admin on 05.02.2017.

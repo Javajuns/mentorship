@@ -1,4 +1,4 @@
-<%@ page import="com.github.mentorship.DB" %>
+<%@ page import="com.github.Javajuns.mentorship.DB" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
@@ -6,13 +6,14 @@
 </head>
 <body>
 <%
-    if (request.getMethod().equals("POST")) {
-        String comment = request.getParameter("comment");
-        DB.comments.add(comment);
-    }
+      DB.comments.clear();;
+      if (request.getMethod().equals("POST")) {
+         String comment = request.getParameter("comment");
+         DB.comments.add(comment);
+     }
     for (String comment: DB.comments) {
-    out.println(comment + "<br/>");
-    }
+        out.println(comment + "<br/>");
+     }
 %>
 
 <form method="post" action="forum.jsp">
