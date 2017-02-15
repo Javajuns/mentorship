@@ -29,6 +29,7 @@
             <groupId>javax.servlet</groupId>
             <artifactId>jstl</artifactId>
             <version>1.1.2</version>
+            <scope>provided</scope>
         </dependency>
 
         <dependency>
@@ -52,6 +53,13 @@
                 <configuration>
                     <source>${jdk}</source>
                     <target>${jdk}</target>
+                </configuration>
+            </plugin>
+            <plugin>
+                <inherited>true</inherited>
+                <artifactId>maven-deploy-plugin</artifactId>
+                <configuration>
+                    <updateReleaseInfo>true</updateReleaseInfo>
                 </configuration>
             </plugin>
             <plugin>

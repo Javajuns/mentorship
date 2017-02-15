@@ -6,20 +6,28 @@
 </head>
 <body>
 <%
-      DB.comments.clear();;
       if (request.getMethod().equals("POST")) {
          String comment = request.getParameter("comment");
          DB.comments.add(comment);
-     }
+      }
     for (String comment: DB.comments) {
         out.println(comment + "<br/>");
      }
 %>
 
 <form method="post" action="forum.jsp">
+    <input type="checkbox" name="checkXSS" value="on" checked/>
+    "XSS Protect"<br/>
     <textarea name="comment"></textarea><br/>
-    <input type="submit" value="Post a comment">
+    <input type="submit" name="post"  value="Post a comment"/>
+    <input type="submit" name="clean" value="Clean"/>
 </form>
+
+<%--<% // to clear comments
+if ("Clean".equals(request.getParameter("clean"))) {
+    DB.comments.clean();
+}
+%>--%>
 
 </body>
 </html>
