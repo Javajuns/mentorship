@@ -12,7 +12,7 @@
 </head>
 <body>
 Enter data into database,please
-<form method="POST" action="orderController.jsp">
+<form method="POST" action="orderView.jsp">
     <input type="text" name="name" size="20"/>
     <input type="text" name="age" size="20"/>
     <input type="text" name="parentId" size="20"/>
