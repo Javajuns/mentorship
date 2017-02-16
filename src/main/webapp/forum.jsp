@@ -23,11 +23,10 @@
     <input type="submit" name="clean" value="Clean"/>
 </form>
 
-<%--<% // to clear comments
-if ("Clean".equals(request.getParameter("clean"))) {
+
+<%--if ("Clean".equals(request.getParameter("Clean"))) {
     DB.comments.clean();
-}
-%>--%>
+}--%>
 
 </body>
 </html>
