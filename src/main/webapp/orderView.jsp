@@ -17,9 +17,9 @@ Enter data into database,please
     <input type="text" name="age" size="20"/>
     <input type="text" name="parentId" size="20"/>
     <br/>
-    <input type="submit" value="SAVE">
-    <input type="submit" value="DELETE">
-    <input type="submit" value="CLEAR">
+    <input type="submit" value="SAVE" />
+    <input type="submit" value="DELETE"/>
+    <input type="submit" value="CLEAR"/>
 </form>
 </body>
 </html>
