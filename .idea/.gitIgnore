@@ -1,2 +1,5 @@
 *.idea
 *.eml
+target
+test.propetries
+test.script
