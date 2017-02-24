@@ -8,8 +8,8 @@ import java.sql.*;
  */
 public class DBImpl {
     public synchronized static int update(String query) throws SQLException, ClassNotFoundException {
-        Class.forName("org.h2.Driver");
-        Connection con= DriverManager.getConnection("jdbc:h2:mem:default", "sa", "");
+        Class.forName("org.hsqldb.jdbcDriver");
+        Connection con= DriverManager.getConnection("jdbc:hsqldb:file:test", "sa", "");
         Statement stmt = con.createStatement();
         //String sql = "SELECT id, name,parent_id from category";
         //ResultSet rs = stmt.executeQuery(sql);
@@ -30,8 +30,8 @@ public class DBImpl {
         con.close();*/
     }
     public synchronized static ResultSet select (String query) throws SQLException, ClassNotFoundException {
-        Class.forName("org.h2.Driver");
-        Connection connection = DriverManager.getConnection("jdbc:h2:mem:default", "sa", "");
+        Class.forName("org.hsqldb.jdbcDriver");
+        Connection connection = DriverManager.getConnection("jdbc:hsqldb:file:test", "sa", "");
         Statement stmt = connection.createStatement();
         ResultSet result = stmt.executeQuery(query);
         return result;

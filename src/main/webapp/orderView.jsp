@@ -39,9 +39,9 @@ Enter data into database,please
     <input type="text" name="parentId" size="20"/>
     </tr>
     <br/>
-    <input type="submit" value="Update" />
-    <input type="submit" value="Delete"/>
-    <input type="submit" value="Insert"/>
+    <input type="submit" name="Update" value="Update" />
+    <input type="submit" name="Delete" value="Delete"/>
+    <input type="submit" name="Insert" value="Insert"/>
 
 </form>
 </body>
