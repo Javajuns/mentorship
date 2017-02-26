@@ -7,10 +7,12 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="mentorship" />
+        <module name="mentorship-1" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
-      <module name="mentorship" target="$(jdk)" />
+      <module name="mentorship" target="1.6" />
+      <module name="mentorship-1" target="1.6" />
     </bytecodeTargetLevel>
   </component>
 </project>

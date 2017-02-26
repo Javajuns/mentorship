@@ -1,110 +1,157 @@
-<project xmlns="http://maven.apache.org/POM/4.0.0"
-         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+<project xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xmlns="http://maven.apache.org/POM/4.0.0"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0
-                      http://maven.apache.org/xsd/maven-4.0.0.xsd">
+                    http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
-
+    <!-- The Basics -->
     <groupId>com.github.Javajuns</groupId>
     <artifactId>mentorship</artifactId>
     <version>1.0-SNAPSHOT</version>
     <packaging>war</packaging>
-    <name>Learning Maven GitHUB JSP Spring IOC</name>
-    <description>PowerMoc core functionaly.</description>
-    <url>https://github.com/OlegLion/mentorship</url>
+
+    <name>Java Juniors mentorship workshop</name>
+    <description>Learning Maven, GitHub, JSP, Spring IoC, Spring MVC</description>
+    <inceptionYear>2015</inceptionYear>
+    <url>https://github.com/javamentorship</url>
+    <licenses>
+        <license>
+            <name>APACHE 2.0</name>
+        </license>
+    </licenses>
+    <developers>
+        <developer>
+            <name>Sergey Ponomarev</name>
+            <roles>
+                <role>Mentor</role>
+            </roles>
+            <email>stokito@gmail.com</email>
+        </developer>
+        <developer>
+            <name>Sergey Karpov</name>
+            <roles>
+                <role>Junior</role>
+            </roles>
+            <email>karpov.srg@gmail.com</email>
+        </developer>
+    </developers>
+    <parent>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-starter-parent</artifactId>
+        <version>1.2.1.RELEASE</version>
+    </parent>
 
     <properties>
-        <project.build.sourseEncoding>UTF-8</project.build.sourseEncoding>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <jdk>1.8</jdk>
     </properties>
 
     <dependencies>
         <dependency>
-            <groupId>junit</groupId>
-            <artifactId>junit</artifactId>
-            <version>4.4</version>
-            <scope>test</scope>
+            <groupId>org.apache.tomcat.embed</groupId>
+            <artifactId>tomcat-embed-jasper</artifactId>
+            <scope>provided</scope>
         </dependency>
-
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-test</artifactId>
+            <version>${spring.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-web</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-data-jpa</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>javax.servlet.jsp</groupId>
+            <artifactId>javax.servlet.jsp-api</artifactId>
+            <version>2.3.2-b01</version>
+            <scope>provided</scope>
+        </dependency>
         <dependency>
             <groupId>javax.servlet</groupId>
             <artifactId>jstl</artifactId>
-            <version>1.1.2</version>
-        </dependency>
-
-        <dependency>
-            <groupId>javax.servlet</groupId>
-            <artifactId>servlet-api</artifactId>
-            <version>2.4</version>
-            <scope>provided</scope>
         </dependency>
         <dependency>
             <groupId>org.hsqldb</groupId>
             <artifactId>hsqldb</artifactId>
             <version>2.3.2</version>
         </dependency>
-
+        <dependency>
+            <groupId>org.hibernate</groupId>
+            <artifactId>hibernate-core</artifactId>
+            <version>4.3.8.Final</version>
+        </dependency>
+        <dependency>
+            <groupId>com.github.stokito</groupId>
+            <artifactId>gag-annotations</artifactId>
+            <version>1.0.1</version>
+        </dependency>
     </dependencies>
 
     <build>
-        <directory>target</directory>
-        <outputDirectory>target/classes</outputDirectory>
-        <finalName>${project.artifactId}-${project.version}</finalName>
-        <testOutputDirectory>target/test-classes</testOutputDirectory>
-        <sourceDirectory>/src</sourceDirectory>
-        <scriptSourceDirectory>/src</scriptSourceDirectory>
-        <testSourceDirectory>/src</testSourceDirectory>
-        <testResources>
-            <testResource>
-                <directory>test</directory>
-            </testResource>
-        </testResources>
         <plugins>
-                <plugin>
+            <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-compiler-plugin</artifactId>
-                <version>3.0</version>
-                <configuration>
-                    <source>$(jdk)</source>
-                    <target>$(jdk)</target>
-                    <compilerVersion>$(jdk)</compilerVersion>
-                    <optimize>true</optimize>
-                    <verbose>true</verbose>
-                    <debug>true</debug>
-                    <fork>true</fork>
-                </configuration>
+                <artifactId>maven-resources-plugin</artifactId>
+                <version>2.6</version>
+                <executions>
+                    <execution>
+                        <id>default-copy-resources</id>
+                        <phase>process-resources</phase>
+                        <goals>
+                            <goal>copy-resources</goal>
+                        </goals>
+                        <configuration>
+                            <overwrite>true</overwrite>
+                            <outputDirectory>${project.build.directory}/${project.artifactId}-${project.version}/WEB-INF/</outputDirectory>
+                            <resources>
+                                <resource>
+                                    <directory>${project.basedir}/src/main/resources</directory>
+                                </resource>
+                            </resources>
+                        </configuration>
+                    </execution>
+                </executions>
+            </plugin>
+
+            <plugin>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-maven-plugin</artifactId>
             </plugin>
             <plugin>
                 <groupId>org.apache.tomcat.maven</groupId>
                 <artifactId>tomcat7-maven-plugin</artifactId>
                 <version>2.2</version>
             </plugin>
-
             <plugin>
-            <groupId>org.dbmaintain</groupId>
-            <artifactId>dbmaintain-maven-plugin</artifactId>
-            <version>2.4</version>
+                <groupId>org.dbmaintain</groupId>
+                <artifactId>dbmaintain-maven-plugin</artifactId>
+                <version>2.4</version>
                 <dependencies>
                     <dependency>
                         <groupId>org.hsqldb</groupId>
                         <artifactId>hsqldb</artifactId>
                         <version>2.3.2</version>
                     </dependency>
-                 </dependencies>
-            <configuration>
-                <databases>
-                    <database>
-                        <driverClassName>org.hsqldb.jdbcDriver</driverClassName>
-                        <url>jdbc:hsqldb:file:target/devDb/devDb;ifexists=false;shutdown=true</url>
-                        <dialect>hsqldb</dialect>
-                        <userName>sa</userName>
-                       <!-- <password></password>-->
-                        <schemaNames>TEST</schemaNames>
-                    </database>
-                </databases>
-                <scriptLocations>src/main/sql</scriptLocations>
-                <autoCreateDbMaintainScriptsTable>true</autoCreateDbMaintainScriptsTable>
-            </configuration>
+                </dependencies>
+                <configuration>
+                    <databases>
+                        <database>
+                            <driverClassName>org.hsqldb.jdbcDriver</driverClassName>
+                            <url>jdbc:hsqldb:file:target/devDb/devDb;ifexists=false;shutdown=true</url>
+                            <dialect>hsqldb</dialect>
+                            <userName>sa</userName>
+                            <!--<password></password>-->
+                            <schemaNames>public</schemaNames>
+                        </database>
+                    </databases>
+                    <scriptLocations>src/main/sql</scriptLocations>
+                    <autoCreateDbMaintainScriptsTable>true</autoCreateDbMaintainScriptsTable>
+                </configuration>
             </plugin>
-       </plugins>
+        </plugins>
     </build>
 </project>
