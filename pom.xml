@@ -5,14 +5,14 @@
     <modelVersion>4.0.0</modelVersion>
     <!-- The Basics -->
     <groupId>com.github.Javajuns</groupId>
-    <artifactId>mentorship</artifactId>
+    <artifactId>mentorship-1</artifactId>
     <version>1.0-SNAPSHOT</version>
     <packaging>war</packaging>
 
     <name>Java Juniors mentorship workshop</name>
     <description>Learning Maven, GitHub, JSP, Spring IoC, Spring MVC</description>
     <inceptionYear>2015</inceptionYear>
-    <url>https://github.com/javamentorship</url>
+    <url>https://github.com/Javajuns</url>
     <licenses>
         <license>
             <name>APACHE 2.0</name>
@@ -25,13 +25,6 @@
                 <role>Mentor</role>
             </roles>
             <email>stokito@gmail.com</email>
-        </developer>
-        <developer>
-            <name>Sergey Karpov</name>
-            <roles>
-                <role>Junior</role>
-            </roles>
-            <email>karpov.srg@gmail.com</email>
         </developer>
     </developers>
     <parent>
@@ -89,6 +82,21 @@
             <artifactId>gag-annotations</artifactId>
             <version>1.0.1</version>
         </dependency>
+        <dependency>
+            <groupId>javax.servlet</groupId>
+            <artifactId>servlet-api</artifactId>
+            <version>2.5</version>
+        </dependency>
+        <dependency>
+            <groupId>commons-digester</groupId>
+            <artifactId>commons-digester</artifactId>
+            <version>2.1</version>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.maven.plugin-tools</groupId>
+            <artifactId>maven-plugin-annotations</artifactId>
+            <version>3.2</version>
+        </dependency>
     </dependencies>
 
     <build>
@@ -120,6 +128,7 @@
             <plugin>
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-maven-plugin</artifactId>
+                <version>1.2.1.RELEASE</version>
             </plugin>
             <plugin>
                 <groupId>org.apache.tomcat.maven</groupId>
