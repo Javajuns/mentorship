@@ -11,7 +11,7 @@
     </properties>
 
     <groupId>com.github.Javajuns</groupId>
-    <artifactId>mentorship</artifactId>g
+    <artifactId>mentorship</artifactId>
     <version>1.0-SNAPSHOT</version>
     <packaging>war</packaging>
 
